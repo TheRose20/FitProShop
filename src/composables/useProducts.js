@@ -5,7 +5,7 @@ const basketLocalStorage = ref([]);
 const favoriteLocalStorage = ref([]);
 
 
-const defaultProducts = [ // 0
+const defaultProducts = [ // 0  
   {
     id: 0,
     basket: false,
