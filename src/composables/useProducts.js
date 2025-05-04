@@ -16,7 +16,7 @@ const defaultProducts = [ // 0
     description:
       "Классический топ Gorilla Wear свободного кроя с рваными краями и большим принтом на груди.",
     price: "5280",
-    picture: "public/img/90107900-classic-work-out-top-black-41.png",
+    picture: ".../public/img/90107900-classic-work-out-top-black-41.png",
     gender: "Муж",
   },
   // 1
