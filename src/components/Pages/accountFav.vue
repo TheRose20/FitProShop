@@ -2,13 +2,13 @@
 
 <script setup>
 
-import useProducts from '../../../composables/useProducts';
+import useProducts from '../../composables/useProducts';
 import cards from '../cards.vue';
 
 const productFav = useProducts().favoriteLocalStorage.value
 
 import { computed } from 'vue';
-import useUsers from '../../../composables/useUsers';
+import useUsers from '../../composables/useUsers';
 import { useRouter } from 'vue-router';
 
 
