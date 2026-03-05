@@ -417,7 +417,7 @@ function DeleteProduct (productToDelete) {
   //   (element) => element.productData.id === productToDelete.id
   // );
   const productIndex = productsLocalStorage.value.indexOf(productToDelete)
-  productsLocalStorage.value.splice(productIndex)
+  productsLocalStorage.value.splice(productIndex, 1)
 }
  
 //TODO Make computed
