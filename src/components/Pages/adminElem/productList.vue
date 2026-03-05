@@ -29,6 +29,13 @@ const uProducts = useProducts();
             <label for="price">Price</label>
             <input name="price" type="number" v-model="product.price">
 
+            <label for="sex">Гендер</label>
+            <select v-model="product.gender" name="sex">
+                <option value="Уни">Унисекс</option>
+                <option value="Муж">Муржское</option>
+                <option value="Жен">Женское</option>
+            </select>
+
             <label for="image">Картинка</label>
             <select v-model="product.picture" name="image">
                 <!-- Устанавливаем путь относительно хранилища -->
