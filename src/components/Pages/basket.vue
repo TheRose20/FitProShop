@@ -3,6 +3,7 @@ import { RouterView, useRouter } from 'vue-router';
 import useProducts from '../../composables/useProducts';
 import useUsers from '../../composables/useUsers';
 import { computed } from 'vue';
+import BadAuthorization from './SubModules/BadAuthorization.vue';
 
 const products = useProducts().basketLocalStorage.value
 
@@ -133,15 +134,7 @@ function deleteBasket(productItem, userId) {
     <!-- <h2>Вход в личный кабинет</h2> -->
     <p>Вы ещё не авторизовались</p>
     <br>
-    <p>Чтобы зайти в личный кабинет необходимо
-      <RouterLink class="bold" :to="{ name: 'authorization' }">Войти</RouterLink>
-      или
-      <RouterLink class="bold" :to="{ name: 'registration' }">Зарегистрироваться</RouterLink>
-
-    </p>
-
-
-
+    <BadAuthorization/>
   </div>
 </template>
 
