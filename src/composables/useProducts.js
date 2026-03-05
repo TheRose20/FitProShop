@@ -436,6 +436,10 @@ function GetMaxIdOfArray(array) {
 
 function AddNewProduct(newProduct) {
   newProduct.id = GetMaxIdOfArray(productsLocalStorage.value) + 1;
+  newProduct.basket = false; //"fix" bad arhitecture
+  newProduct.favorite = false; //"fix" bad arhitecture
+  newProduct.count = 1; //"fix" bad arhitecture
+  newProduct.hits = false; //"fix" bad arhitecture
   productsLocalStorage.value.push(newProduct);
 }
 
