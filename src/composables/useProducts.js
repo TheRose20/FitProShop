@@ -4,9 +4,10 @@ const productsLocalStorage = ref([]);
 const basketLocalStorage = ref([]);
 const favoriteLocalStorage = ref([]);
 const imageURLs = ref([{
-  id: 1,
-  url: "https...",
-  name: "Сосиска"
+  // TODO Add all image urls from default
+  // id: 1,
+  // url: "https...",
+  // name: "Сосиска"
 }
 ]);
 
@@ -289,7 +290,23 @@ try {
   favoriteLocalStorage.value = [];
 }
 
-// function updateImages() {
+try {
+  if (localStorage.getItem("imageURLs") === null) {
+    imageURLs.value = [];
+  } else {
+    imageURLs.value = JSON.parse(localStorage.getItem("imageURLs"));
+  }
+} catch (error) {
+  imageURLs.value = [];
+}
+
+watch(
+  imageURLs,
+  (newValue) => {
+    localStorage.setItem("imageURLs", JSON.stringify(newValue));
+  },
+  { deep: true }
+);
 
 // }
 // Следим за изменениями в продуктах и сохраняем их в localStorage
@@ -441,8 +458,18 @@ function AddNewProduct(newProduct) {
   newProduct.count = 1; //"fix" bad arhitecture
   newProduct.hits = false; //"fix" bad arhitecture
   productsLocalStorage.value.push(newProduct);
+
+  AddUrlImage(newProduct.name, newProduct.picture); //TODO добавить нормальное добавление названий для изображений
 }
 
+function AddUrlImage(name, url) {
+  const  newImageUrl = {
+    name: name,
+    url: url,
+    id: GetMaxIdOfArray(imageURLs.value) + 1
+  }
+  imageURLs.value.push(newImageUrl);
+}
 
 // Экспорт функций и переменных
 export default function useProducts() {
@@ -450,6 +477,7 @@ export default function useProducts() {
     basketLocalStorage,
     favoriteLocalStorage,
     productsLocalStorage,
+    imageURLs,
     findProduct,
     addInBasket,
     deleteInBasket,

@@ -53,9 +53,11 @@ function ChangePrice(increaseDecraeseValue: number) {
 
             <label for="image URL">Ссылка на изображение</label>
             <input name="image URL" type="text" v-model="newProduct.picture">
+            <img :src="newProduct.picture">
         </div>
         <button @click="products.AddNewProduct(newProduct)">Add</button>
     </div>
+    <!-- TODO preview card with image -->
 
 </template>
 

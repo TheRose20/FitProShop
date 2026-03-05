@@ -23,3 +23,11 @@ input {
     height: 40px;
     resize: vertical;
 }
+select {
+    margin-top: 8px;
+}
+img {
+    width: 200px;
+    height: auto;
+    align-self: center;
+}

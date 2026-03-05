@@ -29,6 +29,7 @@ const uProducts = useProducts();
             <label for="price">Price</label>
             <input name="price" type="number" v-model="product.price">
 
+            <label for="image">Картинка</label>
             <select v-model="product.picture" name="image">
                 <!-- Устанавливаем путь относительно хранилища -->
                 <!-- В нашем случае useProducts.js -->
@@ -39,7 +40,9 @@ const uProducts = useProducts();
                 <option value="https://raw.githubusercontent.com/katushka1743/FitProShop/refs/heads/main/src/img/91954800-colby-leggings-gray-9.png">Лосины</option>
                 <option value="https://raw.githubusercontent.com/katushka1743/FitProShop/refs/heads/main/src/img/99221188-gradient-water-bottle-green-orange-101.jpg">Бутылка</option>
                 <option value="https://nixos.org/_astro/nixos-logo-default-gradient-black-regular-horizontal-none.BPpok6mb_1zvrCw.svg">NixOS</option>
+                <option v-for="image in uProducts.imageURLs.value" :value="image.url">{{ image.name }}</option>
             </select>
+            <img :src="product.picture">
 
             <button @click="uProducts.DeleteProduct(product)">Delete</button>
         </div>
