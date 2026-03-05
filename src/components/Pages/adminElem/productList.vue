@@ -2,6 +2,7 @@
 import useProducts from "../../../composables/useProducts";
 
 const products = useProducts().productsLocalStorage.value;
+const uProducts = useProducts();
 
 // const usersAll = useUsers().usersLocalStorage;
 // const userActiveId = useUsers().activityUserId;
@@ -39,6 +40,8 @@ const products = useProducts().productsLocalStorage.value;
                 <option value="https://raw.githubusercontent.com/katushka1743/FitProShop/refs/heads/main/src/img/99221188-gradient-water-bottle-green-orange-101.jpg">Бутылка</option>
                 <option value="https://nixos.org/_astro/nixos-logo-default-gradient-black-regular-horizontal-none.BPpok6mb_1zvrCw.svg">NixOS</option>
             </select>
+
+            <button @click="uProducts.DeleteProduct(product)">Delete</button>
         </div>
     </div>
 </template>
