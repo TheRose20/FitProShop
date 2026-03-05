@@ -75,6 +75,7 @@ function noToggleMenu() {
 				<button class="navBtn" :class="{ 'activePage': route.path === '/FitProShop/FAQ' }">FAQ</button>
 			</RouterLink>
 
+			<!-- TODO v-if authorization only -->
 			<RouterLink :to="{ name: 'basket' }" class="navBtnRoute" @click="noToggleMenu">
 				<button class="navBtn" :class="{ 'activePage': route.path === '/FitProShop/basket' }">Корзина</button>
 			</RouterLink>

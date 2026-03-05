@@ -5,7 +5,7 @@ import { RouterLink, RouterView, useRoute } from 'vue-router';
 import { computed } from 'vue';
 import useUsers from '../../composables/useUsers';
 import { useRouter } from 'vue-router';
-
+import BadAuthorization from './SubModules/BadAuthorization.vue';
 
 const usersAll = useUsers().usersLocalStorage;
 const userActiveId = useUsers().activityUserId;
@@ -22,11 +22,7 @@ const userActive = computed(() => {
 if (!userActive.value) {
   router.push({ name: 'account' });
 }
-
-
 </script>
-
-
 
 <template>
   <h1>Личный кабинет</h1>
@@ -49,17 +45,9 @@ if (!userActive.value) {
   <div class="classNotAuth" v-else>
     <p>Вы ещё не авторизовались</p>
     <br>
-    <p>
-      Чтобы зайти в личный кабинет необходимо
-      <RouterLink class="bold" :to="{ name: 'authorization' }">Войти</RouterLink>
-      или
-      <RouterLink class="bold" :to="{ name: 'registration' }">Зарегистрироваться</RouterLink>
-    </p>
+    <BadAuthorization/>
   </div>
 </template>
-
-
-
 
 <style scoped>
 /* Контейнер для навигационных кнопок */
@@ -104,10 +92,5 @@ if (!userActive.value) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-/* Класс для выделения текста жирным шрифтом */
-.bold {
-  font-weight: bold;
 }
 </style>
