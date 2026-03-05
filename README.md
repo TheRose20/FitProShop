@@ -1,5 +1,21 @@
-# Vue 3 + Vite
+# Еще одно задание
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Обновленный репозиторий
+Хоть это является чужой работой (форком), я не вижу в этом проблем. Писать код с нуля конечно приколько, но еще прикольнее внедрять новые функции в чужой код.
+Обожаю git!
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Новые функции
+- Добавление нового товара
+- Добавление новых изображений (в виде ссылок)
+- Изменение любого параметра товара (изображения, навания, описания, цены, гендера)
+- Удаление товара
+
+## Установка и запуск
+Мне немного лень запускать github pages (особенно при том, что изорбражения были закоммиченны без lfs... Бедный github)
+Поэтому пока запуск локально
+
+### Локальный запуск
+`git clone https://github.com/SergeyTsybrenok/FitProShop.git`
+`cd FitProShop`
+`npm install`
+`npm run dev`
